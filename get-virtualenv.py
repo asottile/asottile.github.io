@@ -44,7 +44,8 @@ def main(argv=None):
     print('Downloading ' + TGZ)
     tar_contents = io.BytesIO(urlopen(TGZ).read())
     actual_md5 = md5(tar_contents.getvalue()).hexdigest()
-    assert actual_md5 == EXPECTED_MD5, (actual_md5, EXPECTED_MD5)
+    if actual_md5 != EXPECTED_MD5:
+        raise AssertionError(actual_md5, EXPECTED_MD5)
     with contextlib.closing(tarfile.open(fileobj=tar_contents)) as tarfile_obj:
         # Chop off the first path segment to avoid having the version in
         # the path
