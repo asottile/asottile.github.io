@@ -4,6 +4,7 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 import contextlib
+import hashlib
 import io
 import os.path
 import shutil
@@ -13,10 +14,8 @@ import tarfile
 
 
 if str is bytes:
-    from md5 import md5
     from urllib import urlopen
 else:
-    from hashlib import md5
     from urllib.request import urlopen
 
 
@@ -43,7 +42,7 @@ def main(argv=None):
 
     print('Downloading ' + TGZ)
     tar_contents = io.BytesIO(urlopen(TGZ).read())
-    actual_md5 = md5(tar_contents.getvalue()).hexdigest()
+    actual_md5 = hashlib.md5(tar_contents.getvalue()).hexdigest()
     if actual_md5 != EXPECTED_MD5:
         raise AssertionError(actual_md5, EXPECTED_MD5)
     with contextlib.closing(tarfile.open(fileobj=tar_contents)) as tarfile_obj:
