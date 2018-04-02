@@ -19,8 +19,8 @@ else:
     from urllib.request import urlopen
 
 
-TGZ = 'https://pypi.python.org/packages/d4/0c/9840c08189e030873387a73b90ada981885010dd9aea134d6de30cd24cb8/virtualenv-15.1.0.tar.gz'  # noqa
-EXPECTED_MD5 = '44e19f4134906fe2d75124427dc9b716'
+TGZ = 'https://pypi.python.org/packages/b1/72/2d70c5a1de409ceb3a27ff2ec007ecdd5cc52239e7c74990e32af57affe9/virtualenv-15.2.0.tar.gz'  # noqa
+EXPECTED_MD5 = 'b5f6b473140cc627d19d0d203f3b63cc'
 PKG_PATH = '.virtualenv-pkg'
 
 
