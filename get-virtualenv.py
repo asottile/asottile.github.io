@@ -19,8 +19,8 @@ else:
     from urllib.request import urlopen
 
 
-TGZ = 'https://pypi.python.org/packages/b1/72/2d70c5a1de409ceb3a27ff2ec007ecdd5cc52239e7c74990e32af57affe9/virtualenv-15.2.0.tar.gz'  # noqa
-EXPECTED_MD5 = 'b5f6b473140cc627d19d0d203f3b63cc'
+TGZ = 'https://files.pythonhosted.org/packages/33/bc/fa0b5347139cd9564f0d44ebd2b147ac97c36b2403943dbee8a25fd74012/virtualenv-16.0.0.tar.gz'
+EXPECTED_SHA256 = 'ca07b4c0b54e14a91af9f34d0919790b016923d157afda5efdde55c96718f752'
 PKG_PATH = '.virtualenv-pkg'
 
 
@@ -42,9 +42,9 @@ def main(argv=None):
 
     print('Downloading ' + TGZ)
     tar_contents = io.BytesIO(urlopen(TGZ).read())
-    actual_md5 = hashlib.md5(tar_contents.getvalue()).hexdigest()
-    if actual_md5 != EXPECTED_MD5:
-        raise AssertionError(actual_md5, EXPECTED_MD5)
+    actual_sha256 = hashlib.sha256(tar_contents.getvalue()).hexdigest()
+    if actual_sha256 != EXPECTED_SHA256:
+        raise AssertionError(actual_sha256, EXPECTED_SHA256)
     with contextlib.closing(tarfile.open(fileobj=tar_contents)) as tarfile_obj:
         # Chop off the first path segment to avoid having the version in
         # the path
