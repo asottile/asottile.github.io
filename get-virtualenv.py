@@ -19,8 +19,8 @@ else:
     from urllib.request import urlopen
 
 
-TGZ = 'https://files.pythonhosted.org/packages/4e/8b/75469c270ac544265f0020aa7c4ea925c5284b23e445cf3aa8b99f662690/virtualenv-16.1.0.tar.gz'  # noqa: E501
-EXPECTED_SHA256 = 'f899fafcd92e1150f40c8215328be38ff24b519cd95357fa6e78e006c7638208'  # noqa: E501
+TGZ = 'https://files.pythonhosted.org/packages/59/38/55dd25a965990bd93f77eb765b189e72cf581ce1c2de651cb7b1dea74ed1/virtualenv-16.2.0.tar.gz'  # noqa: E501
+EXPECTED_SHA256 = 'fa736831a7b18bd2bfeef746beb622a92509e9733d645952da136b0639cd40cd'  # noqa: E501
 PKG_PATH = '.virtualenv-pkg'
 
 
@@ -56,7 +56,7 @@ def main(argv=None):
 
     with clean_path():
         return subprocess.call(
-            (sys.executable, os.path.join(PKG_PATH, 'src', 'virtualenv.py')) +
+            (sys.executable, os.path.join(PKG_PATH, 'virtualenv.py')) +
             tuple(sys.argv[1:])
         )
 
