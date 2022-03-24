@@ -1,4 +1,4 @@
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/asottile/asottile.github.io/master.svg)](https://results.pre-commit.ci/latest/github/asottile/asottile.github.io/master)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/asottile/asottile.github.io/main.svg)](https://results.pre-commit.ci/latest/github/asottile/asottile.github.io/main)
 
 asottile.github.io
 ==================
