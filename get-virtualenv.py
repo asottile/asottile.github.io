@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """This script will bootstrap a virtualenv from only a python interpreter."""
-from __future__ import absolute_import
-from __future__ import unicode_literals
+from __future__ import annotations
 
 import contextlib
 import hashlib
@@ -57,7 +56,7 @@ def main(argv=None):
     with clean_path():
         return subprocess.call(
             (sys.executable, os.path.join(PKG_PATH, 'virtualenv.py')) +
-            tuple(sys.argv[1:])
+            tuple(sys.argv[1:]),
         )
 
 
